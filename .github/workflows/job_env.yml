@@ -1,0 +1,10 @@
+name: Job_Env
+on: workflow_dispatch
+jobs:
+  JobEnv:
+   runs-on: ubuntu-slim
+   env:
+     Job_Env: Job Env
+   steps:
+     - name: Use Job env
+       run: echo $Job_Env
