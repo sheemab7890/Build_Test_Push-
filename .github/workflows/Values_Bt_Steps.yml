@@ -7,4 +7,4 @@ jobs:
      - id: version
        run: echo "tag=v0.1" >> $GITHUB_OUTPUT
        name: Use Output
-       run: echo "Tag is: ${{steps.version.outputs.tag}}
+       run: echo "Tag is: ${{steps.version.outputs.tag}}"
