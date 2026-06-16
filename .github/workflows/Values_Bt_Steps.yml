@@ -1,10 +1,16 @@
 name: Pass values between steps
-on: workflow_dispatch
+
+on:
+  workflow_dispatch:
+
 jobs:
   build:
-   runs-on: ubuntu-slim
-   steps:
-     - id: version
-       run: echo "tag=v0.1" >> $GITHUB_OUTPUT
-       name: Use Output
-       run: echo "Tag is: ${{steps.version.outputs.tag}}"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set version
+        id: version
+        run: echo "tag=v0.1" >> $GITHUB_OUTPUT
+
+      - name: Use Output
+        run: echo "Tag is: ${{ steps.version.outputs.tag }}"
